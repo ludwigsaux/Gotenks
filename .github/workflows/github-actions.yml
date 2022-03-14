@@ -24,6 +24,8 @@ jobs:
       - name: TU
         run: mvn test
       - name: TI
+
+name: build
 on:
   push:
     branches:
