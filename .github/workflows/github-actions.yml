@@ -38,3 +38,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=TP_Archi
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: 23e439c1-b08c-40b4-9b02-b46a8300dc83
+          heroku_app_name: mysterious-depths-05135
+          heroku_email: ludwig.saux@hotmail.com
