@@ -40,6 +40,8 @@ jobs:
         run: mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=TP_Archi
       - name: SonarQube Quality Gate check
         uses: sonarsource/sonarqube-quality-gate-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Check out repository
         uses: actions/checkout@v2
       - name: Deploy to Heroku
